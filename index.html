@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PWA Lightning Out</title>
+  </head>
+  <body>
+    <div id="aura-container"></div>
+    <script src="https://omega3dev-developer-edition.eu44.force.com/lightning/lightning.out.js"></script>
+    <script>
+      const appName = 'c:OM_AuraApp';
+      const componentName = 'c:omegaLwc';
+      const lightningEndpoint = 'https://omega3dev-developer-edition.eu44.force.com';
+      const targetElement = 'aura-container'; //document.querySelector('#aura-container');
+      const componentAttributes = {};
+
+      $Lightning.use(
+        appName,
+        function() {
+          $Lightning.createComponent(
+            componentName,
+            componentAttributes,
+            targetElement,
+            function(cmp) {
+              console.log('lightning component created');
+            }
+          );
+        }, lightningEndpoint
+      );
+    </script>
+  </body>
+</html>
